@@ -1,6 +1,6 @@
 
 
-# UI test Demo using Playwright 
+# UI test Demo with Playwright 
 
 This is a sample UI test project using Playwright. Show that how to implement UI automation using playwright with [Page object models](https://playwright.dev/docs/pom). The UI site test agaist on https://www.advantageonlineshopping.com
 
@@ -13,19 +13,9 @@ To run this project locally, you will need:
 - Clone this project to locally
 - Download and install Node.js, config the node to path.
 - npm install in side your project directory
-- Install playwright in side your project directory, `npm init playwright@latest` ,[install playwright](https://playwright.dev/docs/intro#installing-playwright)
-- Playwright browsers(This is option, you can select to install browsers when installing playwright above) 
+- Install playwright browsers in side your project directory, `npx playwright install` ,[install playwright](https://playwright.dev/docs/intro#installing-playwright)
 - Visual Studio Code
 
-### Tips for playwright install
-
-you may need interactive with install process, select with these options
-
-* Ok to proceed? (y) y
-* Do you want to use TypeScript or JavaScript? · TypeScript
-* Where to put your end-to-end tests? · tests
-* Add a GitHub Actions workflow? (y/N) · true
-* Install Playwright browsers (can be done manually via 'npx playwright install')? (Y/n) › true
 
 ### Terminal Commands to run Test
 
