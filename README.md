@@ -43,6 +43,7 @@ Inside the clone project's directory, you can run several commands
 ### CI Integration
 
 There is a demo ci integration on this proj, any commit in this project on branch main will run `npx playwright test --project=chromium --grep "Demo custom fixture"`, more detail .github/workflows/playwright.yml
+[CI check on actions tab](https://github.com/Sunny1861/ui_auto_demo/actions)
 
 ## License
 
