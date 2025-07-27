@@ -12,8 +12,8 @@ To run this project locally, you will need:
 
 - Clone this project to locally
 - Download and install Node.js, config the node to path.
-- npm install in side your project directory
-- Install playwright browsers in side your project directory, `npx playwright install` ,[install playwright](https://playwright.dev/docs/intro#installing-playwright)
+- `npm install` in side your project directory
+- `npx playwright install` in side your project directory,[install playwright](https://playwright.dev/docs/intro#installing-playwright)
 - Visual Studio Code
 
 
@@ -47,6 +47,6 @@ There is a demo ci integration on this proj, any commit in this project on branc
 
 ## License
 
-[MIT] See the details in LICENSE file
+[MIT](https://github.com/Sunny1861/ui_auto_demo/blob/main/LICENSE)
 
 
