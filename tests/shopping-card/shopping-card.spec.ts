@@ -1,14 +1,14 @@
 import { test, expect, Page } from '@playwright/test';
 import { ShoppingCardPage } from '../../pages/ShoppingCardPage';
 import { Homepage } from '../../pages/HomePage';
-import { ProductDetailsPage } from '../../pages/ProductDetailspage';
+import { ProductDetailsPage } from '../../pages/ProductDetailsPage';
 
 
 const HP_ZBOOK_17_G2_MOBILE_WORKSTATION = "HP ZBOOK 17 G2 MOBILE WORKSTATION";
 const HP_Z8000_BLUETOOTH_MOUSE = "HP Z8000 BLUETOOTH MOUSE";
 const HP_ELITE_X2_1011_G1_TABLET = "HP ELITE X2 1011 G1 TABLET";
 
-test.beforeEach(async ({}, testInfo) => {
+test.beforeEach(async ({ }, testInfo) => {
   console.log(`🔍 Running test: ${testInfo.title}`);
 });
 
