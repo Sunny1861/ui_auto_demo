@@ -1,11 +1,17 @@
 import { test, expect, Page } from '@playwright/test';
 import { ShoppingCardPage } from '../../pages/ShoppingCardPage';
 import { Homepage } from '../../pages/HomePage';
+import { ProductDetailsPage } from '../../pages/ProductDetailspage';
 
 
 const HP_ZBOOK_17_G2_MOBILE_WORKSTATION = "HP ZBOOK 17 G2 MOBILE WORKSTATION";
 const HP_Z8000_BLUETOOTH_MOUSE = "HP Z8000 BLUETOOTH MOUSE";
 const HP_ELITE_X2_1011_G1_TABLET = "HP ELITE X2 1011 G1 TABLET";
+
+test.beforeEach(async ({}, testInfo) => {
+  console.log(`🔍 Running test: ${testInfo.title}`);
+});
+
 /*
  Scenario:  
 1. Go to https://www.advantageonlineshopping.com/'
@@ -24,23 +30,30 @@ test('Test product price and quantity after adding product to shopping cart', as
   // add product 1 to shopping card
   const homePage = new Homepage(page);
   await homePage.SearchProduct(HP_ZBOOK_17_G2_MOBILE_WORKSTATION);
-  await page.locator('[id="8"]').click();
-  await page.getByTitle('GRAY').click();
-  await page.getByRole('button', { name: 'ADD TO CART' }).click();
+  await homePage.GotoProductDetails('[id="8"]');
+
+  let productDetailsPage = new ProductDetailsPage(page);
+  await productDetailsPage.SelectCateogry('GRAY');
+  await productDetailsPage.AddToCard();
 
 
   // Adding  product 2 to shopping card
   await homePage.SearchProduct(HP_Z8000_BLUETOOTH_MOUSE);
-  await page.locator('[id="33"]').click();
-  await page.locator('e-sec-plus-minus div').nth(3).click();
-  await page.getByRole('button', { name: 'ADD TO CART' }).click();
+  await homePage.GotoProductDetails('[id="33"]');
+
+  productDetailsPage = new ProductDetailsPage(page);
+  await productDetailsPage.SetQuantity(2);
+  await productDetailsPage.AddToCard();
 
 
   // Adding product 3 to shopping card
   await homePage.SearchProduct(HP_ELITE_X2_1011_G1_TABLET);
-  await page.locator('[id="17"]').click();
-  await page.getByRole('button', { name: 'ADD TO CART' }).click();
-  await page.getByRole('link', { name: 'ShoppingCart' }).click();
+  await homePage.GotoProductDetails('[id="17"]');
+
+  productDetailsPage = new ProductDetailsPage(page);
+  await productDetailsPage.AddToCard();
+
+  await homePage.GotoShoppingCard();
 
   const scPage = new ShoppingCardPage(page);
 

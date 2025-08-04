@@ -19,4 +19,12 @@ export class Homepage {
         await this.page.getByRole('textbox', { name: 'Search' }).fill(productInfo);
         await this.page.getByRole('textbox', { name: 'Search' }).press('Enter');
     }
+
+    async GotoProductDetails(productSelector: string ): Promise<void> {
+        await this.page.locator(productSelector).click();
+    }
+
+    async GotoShoppingCard(): Promise<void> {
+        await this.page.getByRole('link', { name: 'ShoppingCart' }).click();
+    }
 }
